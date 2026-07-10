@@ -13,8 +13,8 @@ h1 {
     color: darkblue;
 }
 
-img {
-    width: 150px;
+main img {
+    width: 250px;
     height: auto;
     border: 1px solid black;
     padding: 2px;
@@ -22,5 +22,36 @@ img {
 }
 
 p {
-    padding: 10px;
+    padding: 0;
+}
+
+main {
+    max-width: 800px;
+}
+
+aside {
+    width: 20rem;
+    margin: 20px;
+    border: 1px solid rgba(246, 17, 0, 0.23);
+    padding: 1rem;
+    background-color: aqua;
+    color: red;
+    text-align: center;
+}
+
+aside img {
+    width: 20rem;
+    height: auto;
+}
+
+main img {
+    width: 150px;
+    height: auto;
+    padding: 1rem;
+}
+
+footer {
+    margin-top: 20px;
+    border-top: 1px solid #000;
+    text-align: center;
 }
