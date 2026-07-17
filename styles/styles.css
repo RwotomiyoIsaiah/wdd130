@@ -1,5 +1,10 @@
+:root {
+    --main-color: darkblue;
+    --accent-color: aqua;
+    --text-color: red;
+}
 nav {
-    background-color: darkblue;
+    background-color: var(--main-color);
     padding: 10px;
 }
 
@@ -10,7 +15,7 @@ nav a {
 }
 
 h1 {
-    color: darkblue;
+    color: var(--main-color);
 }
 
 main img {
@@ -34,8 +39,8 @@ aside {
     margin: 20px;
     border: 1px solid rgba(246, 17, 0, 0.23);
     padding: 1rem;
-    background-color: aqua;
-    color: red;
+    background-color: var(--accent-color);
+    color: var(--text-color);
     text-align: center;
 }
 
