@@ -85,7 +85,7 @@ h1, h2 {
 }
 
 .hero article{
-    position: relative;
+    position: absolute;
     float: left;
     margin: 16px;
     padding: 8px;
