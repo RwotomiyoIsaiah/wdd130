@@ -1,7 +1,6 @@
 /*ADDED JUSTIFY CONTENT AND ALIGN ITEMS TO HEADER SUCH THAT LOGO AND IMAGE ARE AT LEFT AND RIGHT PARTS*/
 :root {
     --primary-color: rgb(12, 182, 255);
-    --secondary-color: aqua;
     --accent1-color: black;
     --accent2-color: white;
     --heading-font: 'Arial', sans-serif;
@@ -39,7 +38,7 @@ header img {
 }
 
 nav a {
-    color: var(--accent-color);
+    color: var(--accent1-color);
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
@@ -58,8 +57,9 @@ nav, p, section, article {
 
 h1 , h2 {
     font-family: var(--heading-font);
-    color: var(--primary-color);
-
+    color: var(--accent1-color);
+    background-color: var(--primary-color);
+    padding: 10px;
 }
 
 .hero{
