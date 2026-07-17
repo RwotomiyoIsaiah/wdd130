@@ -71,9 +71,10 @@ h1, h2 {
     display: block;
     width: 100%;
     height: auto;
+
 }
 
-h1 {
+.hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
@@ -83,7 +84,7 @@ h1 {
     padding: 15px;
 }
 
-article{
+.hero article{
     position: relative;
     float: left;
     margin: 16px;
@@ -101,10 +102,10 @@ article{
     float: left; 
     width: 200px;
     height: auto;
-    border: 0.5rem solid var(--accent-color); 
+    border: 0.5rem solid var(--accent2-color); 
     padding: 2px;
     margin: 0 20px 10px 0;
-    box-shadow: 0 0 15px var(--box-shadow-color);
+
 }
 
 .socialmedia a {
