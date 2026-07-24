@@ -34,7 +34,7 @@ nav a {
 
 h1 {
     color: var(--main-color);
-    border-bottom: red;
+    border-bottom: 2px solid black;
 }
 
 main img {
