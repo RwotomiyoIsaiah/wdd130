@@ -42,7 +42,7 @@ nav a {
     padding: 10px;
     font-size: 1rem;
     font-weight: 700;
-    color: yellow;
+    color: var(--accent1-color);
     display: block;
 
 }
