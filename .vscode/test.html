@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Water Rafting Company - Contact Us</title>
+    <style>
+        /* CSS Reset and Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* Light gray background like the image */
+            color: #333;
+        }
+
+        /* Container for the content */
+        .main-content {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Company Header Details */
+        .company-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .company-header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .company-header p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .company-header a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Middle Content: Map and Form */
+        .middle-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .map-container {
+            width: 48%;
+            background-color: #e0e0e0;
+            border: 2px solid #ccc;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Inline SVGs for the map for self-containment */
+        .map-container svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .form-container {
+            width: 48%;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            /* Label alignment with fields */
+            gap: 10px;
+        }
+
+        .form-group label {
+            width: 120px;
+            /* Label width to align fields */
+            text-align: left;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* For multi-line labels (Message, Message Purpose) */
+        .message-label-group label,
+        .form-group.purpose-group label {
+            align-self: flex-start;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            flex-grow: 1;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #aaa;
+            /* To look like a placeholder text */
+            font-family: inherit;
+            box-sizing: border-box;
+            /* Important for alignment */
+        }
+
+        /* Resetting placeholder text color for better control */
+        .form-group input[type="text"]::placeholder,
+        .form-group input[type="email"]::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        /* Reverting textarea input color to #333 to contrast with placeholder */
+        .form-group textarea {
+            color: #333;
+        }
+
+        /* Message textarea and radio buttons need a wrap for better layout control */
+        .form-group.purpose-group label {
+            display: block;
+            /* So it's above its contents if needed */
+        }
+
+        .form-group.purpose-group .radio-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 130px;
+            /* Space to match other input alignment */
+            align-self: flex-start;
+            /* Start below the label text horizontally */
+        }
+
+        .form-group.purpose-group .radio-options .option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group.purpose-group .radio-options input[type="radio"] {
+            margin: 0;
+            accent-color: #333;
+            /* Make it look like the gray radio buttons */
+        }
+
+        .form-group.textarea-wrap {
+            margin-top: 15px;
+            align-items: flex-start;
+        }
+
+        .form-group.textarea-wrap label {
+            align-self: flex-start;
+            padding-top: 5px;
+        }
+
+        .form-group.textarea-wrap textarea {
+            height: 150px;
+            resize: none;
+            /* Disallow resizing by the user */
+        }
+
+        /* Checkbox alignment with other controls */
+        .form-group.checkbox-group {
+            justify-content: flex-start;
+            margin-left: 130px;
+            /* Align with input fields */
+        }
+
+        .form-group.checkbox-group label {
+            font-weight: normal;
+            display: inline;
+        }
+
+        .form-group.checkbox-group input[type="checkbox"] {
+            margin: 0;
+            accent-color: #333;
+        }
+
+        /* Submit Button Styling */
+        .submit-btn {
+            background-color: #e0e0e0;
+            color: #333;
+            border: 2px solid #aaa;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: fit-content;
+            align-self: flex-start;
+            /* Place button at the start, as in the image */
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #ccc;
+        }
+
+        /* Bottom Section: Team/Service */
+        .team-section {
+            border: 2px solid #ccc;
+            padding: 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .profile-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .profile-item {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            overflow: hidden;
+            /* For images */
+        }
+
+        /* Specific simplified icons for self-containment */
+        .profile-icon svg {
+            width: 80%;
+            height: 80%;
+        }
+
+        .profile-item p {
+            font-size: 1.1em;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="main-content">
+        <!-- Header Details Section -->
+        <header class="company-header">
+            <h1>White Water Rafting Company</h1>
+            <p>123 Main River Street</p>
+            <p>Kolob, California</p>
+            <p>+1 999 999 9999</p>
+            <p><a href="mailto:info@whitewater.com">info@whitewater.com</a></p>
+        </header>
+
+        <!-- Middle Content: Map and Form -->
+        <section class="middle-section">
+            <div class="map-container">
+                <!-- Using an inline SVG for the map placeholder -->
+                <svg width="400" height="300" viewBox="0 0 400 300">
+                    <rect width="100%" height="100%" fill="#e0e0e0" />
+                    <!-- Street grid lines -->
+                    <path
+                      d="M50 0 L50 300 M250 0 L250 300 M350 0 L350 300 M0 150 L400 150 M0 250 L400 250"
+                      stroke="#aaa" stroke-width="2.5" fill="none" />
+                    <path
+                      d="M150 0 L150 150 M0 100 L50 100 M250 80 L350 80 M300 0 L300 80 M200 150 L200 300 M250 200 L350 200"
+                      stroke="#aaa" stroke-width="2.5" fill="none" />
+                    <!-- Locations details -->
+                    <g transform="translate(250, 0)">
+                        <path d="M0 0 L0 80 M50 0 L50 80 M0 40 L50 40" stroke="#aaa"
+                          stroke-width="2.5" />
+                    </g>
+                    <g transform="translate(300, 150)">
+                        <path d="M0 0 L0 100 M50 0 L50 100 M0 50 L50 50" stroke="#aaa"
+                          stroke-width="2.5" />
+                    </g>
+                    <!-- Small area detailed -->
+                    <g transform="translate(100, 80) scale(0.5)">
+                        <path d="M0 0 L0 100 M100 0 L100 100 M0 50 L100 50" stroke="#aaa"
+                          stroke-width="2.5" />
+                    </g>
+                    <!-- Location pin at the target intersection -->
+                    <g transform="translate(100, 190) scale(1.3)">
+                        <path
+                          d="M0 -22 L0 -22 C-10 -22 -18 -14 -18 -4 C-18 6 -10 14 0 14 C10 14 18 6 18 -4 C18 -14 10 -22 0 -22 Z"
+                          fill="#333" stroke="#fff" stroke-width="1.5" />
+                        <circle cx="0" cy="-4" r="6" fill="#fff" />
+                        <path d="M0 14 L0 22" stroke="#fff" stroke-width="2" />
+                        <path d="M-6 19 L0 25 L6 19 Z" fill="#333" stroke="#fff" stroke-width="1" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="form-container">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Placeholder">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Placeholder">
+                    </div>
+
+                    <!-- Purpose is alignment-tricky with labels -->
+                    <div class="form-group purpose-group">
+                        <label>Message Purpose</label>
+                        <div class="radio-options">
+                            <div class="option">
+                                <input type="radio" id="general" name="purpose" value="general">
+                                <label for="general">General Inquiry</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="reservation" name="purpose"
+                                  value="reservation">
+                                <label for="reservation">Reservation Question</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="website" name="purpose" value="website">
+                                <label for="website">Website Suggestion</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group textarea-wrap">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Type here..."
+                          rows="6"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Please Subscribe me to the monthly
+                            newsletter</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Get in Touch!</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Bottom Team Section -->
+        <section class="team-section">
+            <h2>We Are Here to Serve You</h2>
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <div class="profile-icon">
+                        <!-- Path to profile icon image or inline SVG. Using a simplified placeholder icon. -->
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="#333" stroke="#fff"
+                              stroke-width="2" />
+                            <circle cx="50" cy="35" r="15" fill="#aaa" />
+                            <path d="M25 75 c0 -15, 15 -25, 25 -25 s 25 10, 25 25 z" fill="#aaa" />
+                            <!-- Placeholder for mountains in background of the icon area -->
+                            <path d="M10 80 l20 -30 l20 30 m20 0 l20 -40 l20 40 m10 -10 l10 10"
+                              stroke="#bbb" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <p>Employee Profile</p>
+                </div>
+                <div class="profile-item">
+                    <div class="profile-icon">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="#333" stroke="#fff"
+                              stroke-width="2" />
+                            <circle cx="50" cy="35" r="15" fill="#aaa" />
+                            <path d="M25 75 c0 -15, 15 -25, 25 -25 s 25 10, 25 25 z" fill="#aaa" />
+                            <path d="M10 80 l20 -30 l20 30 m20 0 l20 -40 l20 40 m10 -10 l10 10"
+                              stroke="#bbb" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <p>Employee Profile</p>
+                </div>
+                <div class="profile-item">
+                    <div class="profile-icon">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="#333" stroke="#fff"
+                              stroke-width="2" />
+                            <circle cx="50" cy="35" r="15" fill="#aaa" />
+                            <path d="M25 75 c0 -15, 15 -25, 25 -25 s 25 10, 25 25 z" fill="#aaa" />
+                            <path d="M10 80 l20 -30 l20 30 m20 0 l20 -40 l20 40 m10 -10 l10 10"
+                              stroke="#bbb" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <p>Employee Profile</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
