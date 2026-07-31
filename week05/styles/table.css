@@ -1,0 +1,30 @@
+table {
+    border: 3px solid grey;
+    border-collapse: collapse;
+
+}
+
+th,
+td {
+    font: bold sans-serif;
+    border: 2px solid grey;
+    padding: 6px 10px;
+    text-align: center;
+}
+
+thead th,
+tfoot tr {
+    background-color: black;
+    color: whitesmoke;
+}
+
+caption {
+    color: brown;
+    padding: 10px;
+
+}
+
+table:hover {
+    color: aqua;
+    background-color: black;
+}
