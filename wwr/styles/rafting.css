@@ -3,8 +3,8 @@
     --accent1-color: black;
     --accent2-color: whitesmoke;
     --accent-color:  rgb(200, 238, 250);
-    --heading-font: 'Arial', sans-serif;
-    --body-font: 'Arial', sans-serif;
+    --heading-font: 'Arial';
+    --body-font: 'Arial';
     --heading-color: blue;
 }
 
@@ -17,7 +17,6 @@
 body {
     display: flex;
     flex-direction: column;
-    font-family: var(--body-font);
     color: var(--accent1-color);
     text-align: center;
     background-color: var(--accent2-color);
