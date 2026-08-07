@@ -1,8 +1,8 @@
-/*ADDED JUSTIFY CONTENT AND ALIGN ITEMS TO HEADER SUCH THAT LOGO AND IMAGE ARE AT LEFT AND RIGHT PARTS*/
 :root {
     --primary-color: rgb(12, 182, 255);
     --accent1-color: black;
-    --accent2-color: white;
+    --accent2-color: whitesmoke;
+    --accent-color:  rgb(200, 238, 250);
     --heading-font: 'Arial', sans-serif;
     --body-font: 'Arial', sans-serif;
     --heading-color: blue;
@@ -20,6 +20,7 @@ body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     text-align: center;
+    background-color: var(--accent2-color);
 }
 
 header {
@@ -29,9 +30,8 @@ header {
     background-color: var(--primary-color);
     color: var(--accent1-color);
     padding: 20px;
-    margin: 0 auto;
-    width: 840px;
-    border: 3px solid black;
+    margin: 0 auto ;
+    border: 3px solid var(--accent1-color);
 }
 
 div {
@@ -47,9 +47,9 @@ header img {
 
 nav a {
     text-decoration: none;
-    padding: 10px;
+    padding: 23px;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 900;
     color: var(--accent1-color);
     display: block;
 
@@ -59,7 +59,7 @@ header,
 main,
 footer {
     margin: 0 auto;
-    width: 840px;
+    width: fit-content;
 
 }
 
@@ -92,21 +92,15 @@ section img {
 h2,
 .awaits p {
     grid-column: 1/-1;
-
 }
 
-.awaits figure {
 
+
+
+figure {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-figure {
-    display: grid;
-    flex-direction: row;
-    justify-content: space-between;
-    grid-template-columns: repeat(5, 1fr);
 
 }
 
@@ -116,11 +110,17 @@ section,
 article {
     margin: 0.5rem;
     padding: 8px;
+    padding: 5px;
 }
 
 figure img {
-    width: 100px;
+    width: 200px;
     height: auto;
+    padding: 2px;
+}
+
+figcaption{
+    color: var(--heading-color);
 }
 
 h1,
@@ -162,7 +162,7 @@ h2 {
     bottom: 0px;
     position: absolute;
     float: left;
-    background-color: white;
+    background-color: var(--accent2-color);
 }
 
 .hero article img {
@@ -172,9 +172,13 @@ h2 {
 }
 
 footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    padding: 1px;
+    margin: 5px;
+    width: 64rem;
+    border: 3px solid var(--accent1-color);    
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 
 }
 
@@ -185,6 +189,9 @@ footer {
 
 }
 
+.ccc{
+    background-color: var(--accent-color);
+}
 fieldset {
     display: flex;
     flex-direction: column;
@@ -192,9 +199,9 @@ fieldset {
 }
 
 form {
-    background-color: whitesmoke;
-    color: black;
-    border: 2px solid black;
+    background-color: var(--accent-color);
+    color:var(--accent1-color);
+    border: 2px solid var(--accent1-color);
     border-radius: 1rem;
     min-width: 400px;
     max-height: 50rem;
@@ -221,11 +228,11 @@ textarea {
 
 button {
     margin: 1rem;
-    background-color: rgb(0, 255, 55);
+    background-color: var(--primary-color);
 }
 
 button:hover {
-    background-color: var(--primary-color);
+    background-color: rgb(0, 255, 55);
 }
 
 label {
@@ -244,4 +251,46 @@ input[type="checkbox"] {
     width: 25px;
     height: 25px;
     vertical-align: bottom;
+}
+
+/*trips page*/
+.trip{
+    display: flex;
+    flex-wrap: wrap;
+    width: 18rem;
+    height: auto;
+    padding:5px ;
+
+}
+
+table {
+    border: 3px solid var(--accent1-color);
+    border-collapse: collapse;
+    margin: 10px;
+
+}
+
+th,
+td {
+    font: bold sans-serif;
+    border: 5px solid var(--accent1-color);
+    padding: 6px 10px;
+    text-align: center;
+}
+
+thead th,
+tfoot tr {
+    background-color:var(--accent-color);
+    color: var(--accent1-color);
+}
+
+caption {
+    color: var(--heading-color);
+    padding: 10px;
+
+}
+
+table:hover {
+    color: var(--heading-color);
+    background-color:var(--accent-color);
 }
